@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://dwtkopytvmema"]
+
+[ext_resource type="Script" uid="uid://de5wsybvblpb0" path="res://scripts/shop_machine.gd" id="1_lfpyt"]
+[ext_resource type="Texture2D" uid="uid://cpucp178ld72j" path="res://textures/shop.png" id="1_vytm8"]
+[ext_resource type="FontFile" uid="uid://bq2d0mubc41dn" path="res://ui/font.ttf" id="2_e37c0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5vw27"]
+size = Vector2(39.5, 17)
+
+[node name="ShopMachine" type="StaticBody2D" unique_id=758874352 node_paths=PackedStringArray("money_label")]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_lfpyt")
+money_label = NodePath("Money")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=844594894]
+position = Vector2(0, -26)
+texture = ExtResource("1_vytm8")
+
+[node name="Money" type="Label" parent="." unique_id=881388263]
+offset_left = -34.0
+offset_top = -46.0
+offset_right = 34.0
+offset_bottom = -23.0
+theme_override_fonts/font = ExtResource("2_e37c0")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2011246131]
+position = Vector2(0, 5.5)
+scale = Vector2(2, 1)
+shape = SubResource("RectangleShape2D_5vw27")

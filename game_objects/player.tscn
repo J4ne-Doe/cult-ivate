@@ -1,0 +1,141 @@
+[gd_scene format=3 uid="uid://cvokkykspxl03"]
+
+[ext_resource type="Script" uid="uid://bwenk421njove" path="res://scripts/player.gd" id="1_a4hy7"]
+[ext_resource type="Texture2D" uid="uid://cifyxcsulrutg" path="res://textures/characters/jane.png" id="2_hy5qn"]
+[ext_resource type="Texture2D" uid="uid://iill8h0iwm8q" path="res://textures/ui/circle.png" id="3_hy5qn"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ig7tw"]
+radius = 13.038404
+
+[sub_resource type="Animation" id="Animation_a4hy7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_hy5qn"]
+resource_name = "idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(2.9281723, 0.3077861),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 0.93)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_7o085"]
+resource_name = "walking"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.4506254, 0.35355338),
+"update": 0,
+"values": [0.17453292519943295, -0.17453292519943295]
+}
+
+[sub_resource type="Animation" id="Animation_pyg5a"]
+resource_name = "walking_sideways"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(2.378414, 3.1383362),
+"update": 0,
+"values": [-0.08726646259971647, 0.08726646259971647]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pyg5a"]
+_data = {
+&"RESET": SubResource("Animation_a4hy7"),
+&"idle": SubResource("Animation_hy5qn"),
+&"walking": SubResource("Animation_7o085"),
+&"walking_sideways": SubResource("Animation_pyg5a")
+}
+
+[node name="Player" type="CharacterBody2D" unique_id=1313068919]
+collision_mask = 2
+script = ExtResource("1_a4hy7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=953686725]
+shape = SubResource("CircleShape2D_ig7tw")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1303809602]
+libraries/ = SubResource("AnimationLibrary_pyg5a")
+speed_scale = 2.0
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=110021639]
+texture = ExtResource("2_hy5qn")
+offset = Vector2(0, -24)
+hframes = 4
+frame = 1
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=105397357]
+limit_left = 0
+limit_top = 0
+limit_right = 750
+limit_bottom = 550
+position_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_left_margin = 0.1
+drag_top_margin = 0.1
+drag_right_margin = 0.1
+drag_bottom_margin = 0.1
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=719165635]
+position = Vector2(0, -24)
+color = Color(0.79, 0.47979337, 0.1896, 1)
+energy = 0.41
+texture = ExtResource("3_hy5qn")
+texture_scale = 2.44
+height = 239.0

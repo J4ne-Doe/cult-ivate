@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cqvjdpd8owbgl"]
+
+[ext_resource type="Theme" uid="uid://bk5eadk22hjus" path="res://ui/ui_theme.tres" id="1_h4m5q"]
+[ext_resource type="Script" uid="uid://b27djbih5kxeq" path="res://scripts/ui/inventory_space.gd" id="1_up5dg"]
+
+[node name="InventorySpace" type="Panel" unique_id=2032141398]
+custom_minimum_size = Vector2(40, 40)
+custom_maximum_size = Vector2(40, 40)
+offset_right = 40.0
+offset_bottom = 40.0
+theme = ExtResource("1_h4m5q")
+script = ExtResource("1_up5dg")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=549578000]
+offset = Vector2(16, 16)
+
+[node name="Label" type="Label" parent="." unique_id=2143459329]
+layout_mode = 0
+offset_right = 35.0
+offset_bottom = 12.0
+theme_override_font_sizes/font_size = 8

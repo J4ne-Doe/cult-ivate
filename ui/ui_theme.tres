@@ -1,0 +1,12 @@
+[gd_resource type="Theme" format=3 uid="uid://bk5eadk22hjus"]
+
+[ext_resource type="Texture2D" uid="uid://7fs5edkr87fi" path="res://textures/ui/inventory_space.png" id="1_4mq11"]
+[ext_resource type="FontFile" uid="uid://bq2d0mubc41dn" path="res://ui/font.ttf" id="1_udl1o"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_udl1o"]
+texture = ExtResource("1_4mq11")
+
+[resource]
+default_font = ExtResource("1_udl1o")
+Panel/styles/panel = SubResource("StyleBoxTexture_udl1o")
+RichTextLabel/font_sizes/normal_font_size = 8

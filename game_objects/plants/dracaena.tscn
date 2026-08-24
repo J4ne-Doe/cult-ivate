@@ -1,0 +1,138 @@
+[gd_scene format=3 uid="uid://bd8epy57mha62"]
+
+[ext_resource type="Script" uid="uid://c42l51nbu12qq" path="res://scripts/plants/dracaena.gd" id="1_iy1r3"]
+[ext_resource type="Texture2D" uid="uid://cpfvdcduupjhr" path="res://textures/plants/icons/dracaena_icon.png" id="2_13ohb"]
+[ext_resource type="Texture2D" uid="uid://o8aos3jnhhhb" path="res://textures/plants/dracaena.png" id="3_13ohb"]
+[ext_resource type="FontFile" uid="uid://bq2d0mubc41dn" path="res://ui/font.ttf" id="3_cdxh5"]
+
+[sub_resource type="Animation" id="Animation_qnoxa"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("EarnPopup:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("EarnPopup:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-5, -40)]
+}
+
+[sub_resource type="Animation" id="Animation_p4xe7"]
+resource_name = "bounce"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5),
+"transitions": PackedFloat32Array(4.1410594, 2.5491219, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 0.87), Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("EarnPopup:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.25, 0.5),
+"transitions": PackedFloat32Array(1000000, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("EarnPopup:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.25, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-5, -40), Vector2(-5, -50)]
+}
+
+[sub_resource type="Animation" id="Animation_13ohb"]
+resource_name = "idle"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(3.138338, 0.17677675),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 0.9)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qxkhb"]
+_data = {
+&"RESET": SubResource("Animation_qnoxa"),
+&"bounce": SubResource("Animation_p4xe7"),
+&"idle": SubResource("Animation_13ohb")
+}
+
+[node name="Dracaena" type="Node2D" unique_id=416945365 node_paths=PackedStringArray("earn_popup")]
+script = ExtResource("1_iy1r3")
+earn_popup = NodePath("EarnPopup")
+id = 2
+growth_rate = 5.0
+earn_rate = 1.0
+base_value = 0.5
+icon_texture = ExtResource("2_13ohb")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1150436658]
+texture = ExtResource("3_13ohb")
+offset = Vector2(0, -28)
+hframes = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1307539594]
+libraries/ = SubResource("AnimationLibrary_qxkhb")
+
+[node name="EarnPopup" type="Label" parent="." unique_id=1656086823]
+modulate = Color(1, 1, 1, 0)
+offset_left = -5.0
+offset_top = -40.0
+offset_right = 36.0
+offset_bottom = -16.0
+theme_override_colors/font_outline_color = Color(0.08468992, 0.08468992, 0.08468992, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("3_cdxh5")
+theme_override_font_sizes/font_size = 8
+text = "$1"

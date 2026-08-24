@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="DialogueString" format=3 uid="uid://dctx5xchbj384"]
+
+[ext_resource type="Script" uid="uid://v4ebad6be7n7" path="res://ui/dialogue/dialogue_string.gd" id="1_k0re2"]
+
+[resource]
+script = ExtResource("1_k0re2")
+dialogue = Array[String](["Hello... :)", "Welcome to your new uhh... \"home\"?", "Guess what...", "Chicken Butt"])
+metadata/_custom_type_script = "uid://v4ebad6be7n7"

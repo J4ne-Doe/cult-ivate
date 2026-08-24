@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://ds7py364dnw36"]
+
+[ext_resource type="Texture2D" uid="uid://d1ssee43okt3e" path="res://textures/characters/oko.png" id="1_bacjy"]
+[ext_resource type="Script" uid="uid://d2e1jenpfq18e" path="res://textures/characters/oko.gd" id="1_hew81"]
+[ext_resource type="Script" uid="uid://v4ebad6be7n7" path="res://ui/dialogue/dialogue_string.gd" id="2_e64bq"]
+[ext_resource type="Resource" uid="uid://dctx5xchbj384" path="res://ui/dialogue/oko_introduction.tres" id="3_bmb03"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cbb8a"]
+radius = 8.0
+height = 16.0
+
+[node name="Oko" type="CharacterBody2D" unique_id=1754330557]
+script = ExtResource("1_hew81")
+dialogues = Array[ExtResource("2_e64bq")]([ExtResource("3_bmb03")])
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1534018286]
+texture = ExtResource("1_bacjy")
+hframes = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1722741224]
+position = Vector2(0, 14)
+shape = SubResource("CapsuleShape2D_cbb8a")
