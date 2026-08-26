@@ -2,8 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://5xnkb2a1x6po" path="res://textures/floor_tiles.png" id="1_272bh"]
 [ext_resource type="PackedScene" uid="uid://cvokkykspxl03" path="res://game_objects/player.tscn" id="1_ig7tw"]
-[ext_resource type="PackedScene" uid="uid://ceq5mscs6c5kw" path="res://game_objects/plants/millet.tscn" id="2_272bh"]
-[ext_resource type="PackedScene" uid="uid://bd8epy57mha62" path="res://game_objects/plants/dracaena.tscn" id="3_272bh"]
+[ext_resource type="PackedScene" uid="uid://dvmofjywhfqqq" path="res://game_objects/plants/millet.tscn" id="2_272bh"]
+[ext_resource type="PackedScene" uid="uid://bubdixj2n0n7v" path="res://game_objects/plants/crabgrass.tscn" id="3_272bh"]
 [ext_resource type="Script" uid="uid://dprimunctj6et" path="res://scripts/plant_manager.gd" id="5_7mycd"]
 [ext_resource type="PackedScene" uid="uid://bbsjgmixrs4vy" path="res://ui/inventory.tscn" id="6_7mycd"]
 [ext_resource type="PackedScene" uid="uid://dwtkopytvmema" path="res://game_objects/shop_machine.tscn" id="7_272bh"]
@@ -11,6 +11,9 @@
 [ext_resource type="PackedScene" uid="uid://dgy810ogfwtol" path="res://ui/dialogue/dialogue.tscn" id="9_4c57u"]
 [ext_resource type="PackedScene" uid="uid://ds7py364dnw36" path="res://game_objects/oko.tscn" id="9_kek77"]
 [ext_resource type="Script" uid="uid://44e1bu1wt2mt" path="res://scripts/ui/ui_manager.gd" id="10_efxa6"]
+[ext_resource type="Resource" uid="uid://bctplqd16fm2i" path="res://ui/dialogue/oko_intro.tres" id="11_dg77c"]
+[ext_resource type="Script" uid="uid://ddqckkwoc2aih" path="res://ui/dialogue/dialogue_chunk.gd" id="11_ycdy4"]
+[ext_resource type="PackedScene" uid="uid://xjp1xakudn7f" path="res://game_objects/spade.tscn" id="14_w48qg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5vw27"]
 texture = ExtResource("1_272bh")
@@ -92,7 +95,7 @@ sources/1 = SubResource("TileSetScenesCollectionSource_272bh")
 [node name="Main" type="Node2D" unique_id=3188913]
 y_sort_enabled = true
 
-[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=729589539]
+[node name="Tint" type="CanvasModulate" parent="." unique_id=729589539]
 color = Color(0.21306929, 0.23734146, 0.2940398, 1)
 
 [node name="EnvironmentTiles" type="TileMapLayer" parent="." unique_id=468844849]
@@ -110,7 +113,7 @@ plant_tiles = NodePath("../PlantTiles")
 floor_tiles = NodePath("../EnvironmentTiles")
 inventory = NodePath("../UI/Inventory")
 
-[node name="Player" parent="." unique_id=1313068919 node_paths=PackedStringArray("plant_manager", "inventory") instance=ExtResource("1_ig7tw")]
+[node name="Player" parent="." unique_id=1313068919 node_paths=PackedStringArray("plant_manager", "inventory") groups=["player"] instance=ExtResource("1_ig7tw")]
 y_sort_enabled = true
 position = Vector2(407, 124)
 collision_mask = 6
@@ -118,26 +121,31 @@ plant_manager = NodePath("../PlantManager")
 inventory = NodePath("../UI/Inventory")
 
 [node name="ShopMachine" parent="." unique_id=758874352 instance=ExtResource("7_272bh")]
-position = Vector2(512, 117)
+position = Vector2(550, 117)
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=1141515879]
 
-[node name="Inventory" parent="UI" unique_id=206974071 node_paths=PackedStringArray("plant_tiles") instance=ExtResource("6_7mycd")]
-plant_tiles = NodePath("../../PlantTiles")
+[node name="Inventory" parent="UI" unique_id=206974071 instance=ExtResource("6_7mycd")]
 
 [node name="PlantDetails" parent="UI" unique_id=852124098 instance=ExtResource("8_5vw27")]
 
 [node name="Dialogue" parent="UI" unique_id=1900946636 instance=ExtResource("9_4c57u")]
 visible = false
 
-[node name="UIManager" type="Node" parent="UI" unique_id=1262161790 node_paths=PackedStringArray("inventory", "plant_details", "dialogue", "player") groups=["ui_manager"]]
+[node name="UIManager" type="Node" parent="UI" unique_id=1262161790 node_paths=PackedStringArray("inventory_ui", "plant_details_ui", "dialogue_ui", "player", "spade", "oko") groups=["ui_manager"]]
 script = ExtResource("10_efxa6")
-inventory = NodePath("../Inventory")
-plant_details = NodePath("../PlantDetails")
-dialogue = NodePath("../Dialogue")
+inventory_ui = NodePath("../Inventory")
+plant_details_ui = NodePath("../PlantDetails")
+dialogue_ui = NodePath("../Dialogue")
 player = NodePath("../../Player")
+spade = NodePath("../../Spade")
+oko = NodePath("../../Oko")
+dialogues = Array[ExtResource("11_ycdy4")]([ExtResource("11_dg77c")])
 
 [node name="Oko" parent="." unique_id=1754330557 instance=ExtResource("9_kek77")]
-position = Vector2(238, 84)
+position = Vector2(239, 107)
 collision_layer = 4
 collision_mask = 0
+
+[node name="Spade" parent="." unique_id=47733180 instance=ExtResource("14_w48qg")]
+position = Vector2(309, 98)

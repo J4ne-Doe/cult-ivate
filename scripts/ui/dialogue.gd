@@ -1,20 +1,35 @@
 extends Control
 
-@export var current_dialogue : DialogueString
+@export var current_dialogue : DialogueChunk
 @export var text_box : RichTextLabel
+@export var char_name : Label
 
-var dialogue_progress = 0
+@export var texture : TextureRect
 
-func _physics_process(delta):
-	if (!current_dialogue): return
+var progress = 0
+var tween
 
-	#testing using oko intro
-	text_box.text = current_dialogue.dialogue[dialogue_progress]
+func set_dialogue(dialogue_chunk : DialogueChunk):
+	current_dialogue = dialogue_chunk
+	var cur_dial = current_dialogue.dialogue_lines[progress]
+	text_box.text = cur_dial.line
+	char_name.text = cur_dial.character
+	texture.texture = cur_dial.portrait
 
-	if (Input.is_action_just_pressed("Interact")):
-		if (dialogue_progress < current_dialogue.dialogue.size() - 1):
-			dialogue_progress += 1
-		else:
-			dialogue_progress = 0
-			current_dialogue = null
-			get_tree().get_first_node_in_group("ui_manager").finish_dialogue()
+	text_box.visible_ratio = 0
+	tween = get_tree().create_tween().bind_node(self)
+	tween.tween_property(text_box, "visible_ratio", 1, 2)
+
+func next_dialogue():
+	progress += 1
+	var cur_dial = current_dialogue.dialogue_lines[progress]
+	text_box.text = cur_dial.line
+	char_name.text = cur_dial.character
+	texture.texture = cur_dial.portrait
+
+	if tween:
+		tween.kill()
+
+	text_box.visible_ratio = 0
+	tween = get_tree().create_tween().bind_node(self)
+	tween.tween_property(text_box, "visible_ratio", 1, 2)

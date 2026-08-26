@@ -1,22 +1,46 @@
 [gd_scene format=3 uid="uid://ds7py364dnw36"]
 
 [ext_resource type="Texture2D" uid="uid://d1ssee43okt3e" path="res://textures/characters/oko.png" id="1_bacjy"]
-[ext_resource type="Script" uid="uid://d2e1jenpfq18e" path="res://textures/characters/oko.gd" id="1_hew81"]
-[ext_resource type="Script" uid="uid://v4ebad6be7n7" path="res://ui/dialogue/dialogue_string.gd" id="2_e64bq"]
-[ext_resource type="Resource" uid="uid://dctx5xchbj384" path="res://ui/dialogue/oko_introduction.tres" id="3_bmb03"]
+[ext_resource type="Script" uid="uid://d2e1jenpfq18e" path="res://scripts/oko.gd" id="1_hew81"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cbb8a"]
 radius = 8.0
 height = 16.0
 
+[sub_resource type="Animation" id="Animation_hew81"]
+resource_name = "idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(2.9281723, 0.3077861),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 0.93)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_roail"]
+_data = {
+&"idle": SubResource("Animation_hew81")
+}
+
 [node name="Oko" type="CharacterBody2D" unique_id=1754330557]
 script = ExtResource("1_hew81")
-dialogues = Array[ExtResource("2_e64bq")]([ExtResource("3_bmb03")])
+display_name = "Oko"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1534018286]
+scale = Vector2(1, 0.99999785)
 texture = ExtResource("1_bacjy")
+offset = Vector2(0, -28)
 hframes = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1722741224]
-position = Vector2(0, 14)
+position = Vector2(0, -11)
 shape = SubResource("CapsuleShape2D_cbb8a")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1606810431]
+libraries/ = SubResource("AnimationLibrary_roail")

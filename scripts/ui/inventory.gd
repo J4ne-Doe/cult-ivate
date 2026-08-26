@@ -1,8 +1,11 @@
 extends Control
 
 @export var inventory : Array[Panel]
-@export var plant_tiles : TileMapLayer
 @export var selected_space_id : int = 0
+
+@onready var plant_manager = get_tree().get_first_node_in_group("plant_manager") 
+
+@export var shovel : Label
 
 func _process(delta):
 	$Selector.global_position = inventory[selected_space_id].global_position
@@ -38,8 +41,15 @@ func remove_plant(plant_id, amt):
 	inv_space.rmv_plant(amt)
 
 
+func obtain_shovel(amt):
+	Global.shovel_amt += amt
+	shovel.text = "Shovel amount: " + str(Global.shovel_amt)
+
+func remove_shovel(amt):
+	obtain_shovel(amt * -1)
+
 func get_scene_from_plant_id(id):
-	return plant_tiles.tile_set.get_source(1).get_scene_tile_scene(id)
+	return plant_manager.plant_tiles.tile_set.get_source(1).get_scene_tile_scene(id)
 
 func get_selected_plant_id():
 	var plant_scene = inventory[selected_space_id].current_plant

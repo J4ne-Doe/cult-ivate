@@ -1,13 +1,126 @@
 [gd_scene format=3 uid="uid://cvokkykspxl03"]
 
 [ext_resource type="Script" uid="uid://bwenk421njove" path="res://scripts/player.gd" id="1_a4hy7"]
-[ext_resource type="Texture2D" uid="uid://cifyxcsulrutg" path="res://textures/characters/jane.png" id="2_hy5qn"]
+[ext_resource type="Texture2D" uid="uid://4dmtc7qwkher" path="res://textures/characters/jane_idle.png" id="2_hy5qn"]
+[ext_resource type="Texture2D" uid="uid://cbiu55tf2ebro" path="res://textures/characters/jane-walking.png" id="3_7o085"]
 [ext_resource type="Texture2D" uid="uid://iill8h0iwm8q" path="res://textures/ui/circle.png" id="3_hy5qn"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ig7tw"]
-radius = 13.038404
+[sub_resource type="AtlasTexture" id="AtlasTexture_7o085"]
+atlas = ExtResource("2_hy5qn")
+region = Rect2(0, 0, 64, 64)
 
-[sub_resource type="Animation" id="Animation_a4hy7"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_pyg5a"]
+atlas = ExtResource("2_hy5qn")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mq4jh"]
+atlas = ExtResource("2_hy5qn")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jg8jt"]
+atlas = ExtResource("2_hy5qn")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7rdht"]
+atlas = ExtResource("3_7o085")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xfs5t"]
+atlas = ExtResource("3_7o085")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pbirh"]
+atlas = ExtResource("3_7o085")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ghwos"]
+atlas = ExtResource("3_7o085")
+region = Rect2(192, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_twgr7"]
+atlas = ExtResource("3_7o085")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pdcc7"]
+atlas = ExtResource("3_7o085")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ieevb"]
+atlas = ExtResource("3_7o085")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ki4sl"]
+atlas = ExtResource("3_7o085")
+region = Rect2(128, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cbb8a"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7o085")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pyg5a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mq4jh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jg8jt")
+}],
+"loop": 0,
+"name": &"idle",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7rdht")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xfs5t")
+}],
+"loop": 1,
+"name": &"walking_down",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pbirh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ghwos")
+}],
+"loop": 1,
+"name": &"walking_left",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_twgr7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pdcc7")
+}],
+"loop": 1,
+"name": &"walking_right",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ieevb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ki4sl")
+}],
+"loop": 1,
+"name": &"walking_up",
+"speed": 2.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ig7tw"]
+radius = 11.0
+
+[sub_resource type="Animation" id="Animation_ruxeo"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -21,21 +134,9 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(1, 1)]
 }
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
 
-[sub_resource type="Animation" id="Animation_hy5qn"]
-resource_name = "idle"
+[sub_resource type="Animation" id="Animation_vp544"]
+resource_name = "bobbing"
 loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -45,79 +146,30 @@ tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(2.9281723, 0.3077861),
+"transitions": PackedFloat32Array(2.3784142, 0.18301086),
 "update": 0,
-"values": [Vector2(1, 1), Vector2(1, 0.93)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
+"values": [Vector2(1, 1), Vector2(1, 0.95)]
 }
 
-[sub_resource type="Animation" id="Animation_7o085"]
-resource_name = "walking"
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(0.4506254, 0.35355338),
-"update": 0,
-"values": [0.17453292519943295, -0.17453292519943295]
-}
-
-[sub_resource type="Animation" id="Animation_pyg5a"]
-resource_name = "walking_sideways"
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(2.378414, 3.1383362),
-"update": 0,
-"values": [-0.08726646259971647, 0.08726646259971647]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_pyg5a"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ojauy"]
 _data = {
-&"RESET": SubResource("Animation_a4hy7"),
-&"idle": SubResource("Animation_hy5qn"),
-&"walking": SubResource("Animation_7o085"),
-&"walking_sideways": SubResource("Animation_pyg5a")
+&"RESET": SubResource("Animation_ruxeo"),
+&"bobbing": SubResource("Animation_vp544")
 }
 
 [node name="Player" type="CharacterBody2D" unique_id=1313068919]
 collision_mask = 2
 script = ExtResource("1_a4hy7")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=953686725]
-shape = SubResource("CircleShape2D_ig7tw")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1303809602]
-libraries/ = SubResource("AnimationLibrary_pyg5a")
-speed_scale = 2.0
-
-[node name="Sprite" type="Sprite2D" parent="." unique_id=110021639]
-texture = ExtResource("2_hy5qn")
+[node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=1886270549]
+sprite_frames = SubResource("SpriteFrames_cbb8a")
+animation = &"idle"
+speed_scale = 1.5
 offset = Vector2(0, -24)
-hframes = 4
-frame = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=953686725]
+position = Vector2(0, -10)
+shape = SubResource("CircleShape2D_ig7tw")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=105397357]
 limit_left = 0
@@ -139,3 +191,7 @@ energy = 0.41
 texture = ExtResource("3_hy5qn")
 texture_scale = 2.44
 height = 239.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1960204459]
+libraries/ = SubResource("AnimationLibrary_ojauy")
+speed_scale = 1.5

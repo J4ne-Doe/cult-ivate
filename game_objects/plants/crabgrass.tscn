@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://bubdixj2n0n7v"]
+
+[ext_resource type="Script" uid="uid://c42l51nbu12qq" path="res://scripts/plants/crabgrass.gd" id="1_yq3q2"]
+[ext_resource type="Texture2D" uid="uid://beywm0yoa5m8f" path="res://textures/plants/crabgrass.png" id="2_6jkoq"]
+[ext_resource type="Texture2D" uid="uid://cpfvdcduupjhr" path="res://textures/plants/icons/crabgrass_icon.png" id="2_g36ft"]
+
+[node name="Crabgrass" type="Node2D" unique_id=1044711202]
+script = ExtResource("1_yq3q2")
+id = 2
+stages = 2
+growth_rate = 8.0
+earn_rate = 8.0
+base_value = 0.5
+display_name = "Crabgrass"
+desc = "A common weed.
+Dramatically slows down adjecent plants.
+
+25% chance to spawn Millet / tick"
+icon_texture = ExtResource("2_g36ft")
+has_mutations = true
+mutation_chances = PackedFloat32Array(75, 25)
+mutation_plant_scene_paths = Array[String](["res://game_objects/plants/millet.tscn"])
+
+[node name="Earn" type="Label" parent="." unique_id=624650724]
+offset_left = -12.0
+offset_top = -60.0
+offset_right = 10.0
+offset_bottom = -43.0
+offset_transform_enabled = true
+theme_override_font_sizes/font_size = 8
+text = "10$"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1172997057]
+texture = ExtResource("2_6jkoq")
+offset = Vector2(0, -27)
+hframes = 3

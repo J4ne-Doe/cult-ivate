@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cpfvdcduupjhr"
-path="res://.godot/imported/dracaena_icon.png-38b4c2bc8bc3bb03e9fb75740dda3ee6.ctex"
+uid="uid://b7prf0mdh04sr"
+path="res://.godot/imported/jane_full.png-661e2a8885980cde8f700892e6023a85.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/plants/icons/dracaena_icon.png"
-dest_files=["res://.godot/imported/dracaena_icon.png-38b4c2bc8bc3bb03e9fb75740dda3ee6.ctex"]
+source_file="res://textures/characters/jane_full.png"
+dest_files=["res://.godot/imported/jane_full.png-661e2a8885980cde8f700892e6023a85.ctex"]
 
 [params]
 

@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://xjp1xakudn7f"]
+
+[ext_resource type="Script" uid="uid://cfyox8irn0oyu" path="res://scripts/spade.gd" id="1_byg67"]
+[ext_resource type="Texture2D" uid="uid://dx6cu2ouuyump" path="res://textures/spade.png" id="1_f5sba"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g36ft"]
+atlas = ExtResource("1_f5sba")
+region = Rect2(0, 0, 32, 0)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cbb8a"]
+radius = 7.0
+
+[node name="Spade" type="StaticBody2D" unique_id=47733180]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_byg67")
+shovel_price = 10
+icon = SubResource("AtlasTexture_g36ft")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=197722250]
+texture = ExtResource("1_f5sba")
+offset = Vector2(6, -10)
+hframes = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=492755004]
+shape = SubResource("CircleShape2D_cbb8a")

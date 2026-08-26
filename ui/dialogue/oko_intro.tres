@@ -1,0 +1,123 @@
+[gd_resource type="Resource" script_class="DialogueChunk" format=3 uid="uid://bctplqd16fm2i"]
+
+[ext_resource type="Script" uid="uid://v4ebad6be7n7" path="res://ui/dialogue/dialogue_string.gd" id="1_l0d00"]
+[ext_resource type="Script" uid="uid://ddqckkwoc2aih" path="res://ui/dialogue/dialogue_chunk.gd" id="2_yjpla"]
+[ext_resource type="Texture2D" uid="uid://dvoncty44co0j" path="res://textures/characters/oko_full.png" id="2_yr4ba"]
+[ext_resource type="Texture2D" uid="uid://b7prf0mdh04sr" path="res://textures/characters/jane_full.png" id="3_yr4ba"]
+
+[sub_resource type="Resource" id="Resource_4mq11"]
+script = ExtResource("1_l0d00")
+line = "Hello... Jane..."
+character = "Oko"
+portrait = ExtResource("2_yr4ba")
+metadata/_custom_type_script = "uid://v4ebad6be7n7"
+
+[sub_resource type="Resource" id="Resource_l0d00"]
+script = ExtResource("1_l0d00")
+line = "What is this place what where am I wh-"
+character = "Jane"
+portrait = ExtResource("3_yr4ba")
+metadata/_custom_type_script = "uid://v4ebad6be7n7"
+
+[sub_resource type="Resource" id="Resource_0tufi"]
+script = ExtResource("1_l0d00")
+line = "Woah, woah, calm down..."
+character = "Oko"
+portrait = ExtResource("2_yr4ba")
+metadata/_custom_type_script = "uid://v4ebad6be7n7"
+
+[sub_resource type="Resource" id="Resource_yjpla"]
+script = ExtResource("1_l0d00")
+line = "(Why are all of these people so eccstatic all the time...)"
+character = "Oko"
+portrait = ExtResource("2_yr4ba")
+metadata/_custom_type_script = "uid://v4ebad6be7n7"
+
+[sub_resource type="Resource" id="Resource_h6688"]
+script = ExtResource("1_l0d00")
+line = "Ahem... You are here to... help us grow plants.... hehe... yeah.... that...."
+character = "Oko"
+portrait = ExtResource("2_yr4ba")
+metadata/_custom_type_script = "uid://v4ebad6be7n7"
+
+[sub_resource type="Resource" id="Resource_abimu"]
+script = ExtResource("1_l0d00")
+line = "Wait what... Why am I in a basement with like no sunlight then? Don't plants need like sunlight or whatever?"
+character = "Jane"
+portrait = ExtResource("3_yr4ba")
+metadata/_custom_type_script = "uid://v4ebad6be7n7"
+
+[sub_resource type="Resource" id="Resource_ucu5j"]
+script = ExtResource("1_l0d00")
+line = "Also... uhhhhhh... Why did you knock me out to take me here?"
+character = "Jane"
+portrait = ExtResource("3_yr4ba")
+metadata/_custom_type_script = "uid://v4ebad6be7n7"
+
+[sub_resource type="Resource" id="Resource_ajidp"]
+script = ExtResource("1_l0d00")
+line = "Oh! That! Heheh.... We were afraid of you... escaping..."
+character = "Oko"
+portrait = ExtResource("2_yr4ba")
+metadata/_custom_type_script = "uid://v4ebad6be7n7"
+
+[sub_resource type="Resource" id="Resource_dn24g"]
+script = ExtResource("1_l0d00")
+line = "Wait why would I escape? Wait a second what are you guys gonna do to me if I say no-"
+character = "Jane"
+portrait = ExtResource("3_yr4ba")
+metadata/_custom_type_script = "uid://v4ebad6be7n7"
+
+[sub_resource type="Resource" id="Resource_tx5j7"]
+script = ExtResource("1_l0d00")
+line = "Well..."
+character = "Oko"
+portrait = ExtResource("2_yr4ba")
+metadata/_custom_type_script = "uid://v4ebad6be7n7"
+
+[sub_resource type="Resource" id="Resource_h7e54"]
+script = ExtResource("1_l0d00")
+line = "If we have nothing to eat..."
+character = "Oko"
+portrait = ExtResource("2_yr4ba")
+metadata/_custom_type_script = "uid://v4ebad6be7n7"
+
+[sub_resource type="Resource" id="Resource_n3nfy"]
+script = ExtResource("1_l0d00")
+line = "You have plenty of meat on you... hehe"
+character = "Oko"
+portrait = ExtResource("2_yr4ba")
+metadata/_custom_type_script = "uid://v4ebad6be7n7"
+
+[sub_resource type="Resource" id="Resource_wayyv"]
+script = ExtResource("1_l0d00")
+line = "WHAAT"
+character = "Jane"
+portrait = ExtResource("3_yr4ba")
+metadata/_custom_type_script = "uid://v4ebad6be7n7"
+
+[sub_resource type="Resource" id="Resource_wlkwl"]
+script = ExtResource("1_l0d00")
+line = "Wait but like what if I told you I was into that sorta stu-"
+character = "Jane"
+portrait = ExtResource("3_yr4ba")
+metadata/_custom_type_script = "uid://v4ebad6be7n7"
+
+[sub_resource type="Resource" id="Resource_pkght"]
+script = ExtResource("1_l0d00")
+line = "Here are two strands of Millet... make it work... Ill check back on you in a while... and if you dont have 10 strands of millet ready..."
+character = "Oko"
+portrait = ExtResource("2_yr4ba")
+metadata/_custom_type_script = "uid://v4ebad6be7n7"
+
+[sub_resource type="Resource" id="Resource_trcsx"]
+script = ExtResource("1_l0d00")
+line = "Okay okay yeah okay uhhh bye..."
+character = "Jane"
+portrait = ExtResource("3_yr4ba")
+metadata/_custom_type_script = "uid://v4ebad6be7n7"
+
+[resource]
+script = ExtResource("2_yjpla")
+dialogue_lines = Array[ExtResource("1_l0d00")]([SubResource("Resource_4mq11"), SubResource("Resource_l0d00"), SubResource("Resource_0tufi"), SubResource("Resource_yjpla"), SubResource("Resource_h6688"), SubResource("Resource_abimu"), SubResource("Resource_ucu5j"), SubResource("Resource_ajidp"), SubResource("Resource_dn24g"), SubResource("Resource_tx5j7"), SubResource("Resource_h7e54"), SubResource("Resource_n3nfy"), SubResource("Resource_wayyv"), SubResource("Resource_wlkwl"), SubResource("Resource_pkght"), SubResource("Resource_trcsx")])
+metadata/_custom_type_script = "uid://ddqckkwoc2aih"

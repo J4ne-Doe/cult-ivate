@@ -6,7 +6,7 @@
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j1tqb"]
 bg_color = Color(0.12, 0.12, 0.12, 0.42745098)
 
-[node name="Dialogue" type="Control" unique_id=1900946636 node_paths=PackedStringArray("text_box")]
+[node name="Dialogue" type="Control" unique_id=1900946636 node_paths=PackedStringArray("text_box", "char_name", "texture")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -14,43 +14,38 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_h4lfh")
-text_box = NodePath("MarginContainer/Panel/MarginContainer/VBoxContainer/Message")
+text_box = NodePath("HBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer/Message")
+char_name = NodePath("HBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer/Name")
+texture = NodePath("HBoxContainer/TextureRect")
 
-[node name="TextureRect" type="TextureRect" parent="." unique_id=333431729]
-layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -137.0
-offset_top = -256.0
-grow_horizontal = 0
-grow_vertical = 0
-size_flags_horizontal = 8
-size_flags_vertical = 8
-texture = ExtResource("1_fm7tp")
-
-[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1509785328]
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1464319028]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 8
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer" unique_id=333431729]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+texture = ExtResource("1_fm7tp")
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer" unique_id=1509785328]
+layout_mode = 2
+size_flags_horizontal = 3
 theme_override_constants/margin_top = 8
-theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 8
 
-[node name="Panel" type="Panel" parent="MarginContainer" unique_id=1469689982]
-custom_minimum_size = Vector2(480, 120)
+[node name="Panel" type="Panel" parent="HBoxContainer/MarginContainer" unique_id=1469689982]
+custom_minimum_size = Vector2(200, 120)
 layout_mode = 2
 size_flags_horizontal = 0
-size_flags_vertical = 8
+size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxFlat_j1tqb")
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel" unique_id=66342707]
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer/MarginContainer/Panel" unique_id=66342707]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -62,16 +57,18 @@ theme_override_constants/margin_top = 4
 theme_override_constants/margin_right = 4
 theme_override_constants/margin_bottom = 4
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer" unique_id=758683126]
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/MarginContainer/Panel/MarginContainer" unique_id=758683126]
 layout_mode = 2
 
-[node name="Name" type="Label" parent="MarginContainer/Panel/MarginContainer/VBoxContainer" unique_id=1509995973]
+[node name="Name" type="Label" parent="HBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer" unique_id=1509995973]
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
 text = "Oko"
 
-[node name="Message" type="RichTextLabel" parent="MarginContainer/Panel/MarginContainer/VBoxContainer" unique_id=1711852384]
+[node name="Message" type="RichTextLabel" parent="HBoxContainer/MarginContainer/Panel/MarginContainer/VBoxContainer" unique_id=1711852384]
 layout_mode = 2
 size_flags_vertical = 3
 text = "IM GOONING IT RAHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH"
+visible_characters = 0
+visible_ratio = 0.0

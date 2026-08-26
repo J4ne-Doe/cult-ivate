@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://o8aos3jnhhhb"
-path="res://.godot/imported/dracaena.png-6a91de2f05700fd782ad0a47b4a7ed4e.ctex"
+uid="uid://beywm0yoa5m8f"
+path="res://.godot/imported/crabgrass.png-793ad11af59725818bacd5152ce8d8ff.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/plants/dracaena.png"
-dest_files=["res://.godot/imported/dracaena.png-6a91de2f05700fd782ad0a47b4a7ed4e.ctex"]
+source_file="res://textures/plants/crabgrass.png"
+dest_files=["res://.godot/imported/crabgrass.png-793ad11af59725818bacd5152ce8d8ff.ctex"]
 
 [params]
 
