@@ -10,10 +10,11 @@
 [ext_resource type="PackedScene" uid="uid://d05qfcrk1g0vd" path="res://ui/plant_details.tscn" id="8_5vw27"]
 [ext_resource type="PackedScene" uid="uid://dgy810ogfwtol" path="res://ui/dialogue/dialogue.tscn" id="9_4c57u"]
 [ext_resource type="PackedScene" uid="uid://ds7py364dnw36" path="res://game_objects/oko.tscn" id="9_kek77"]
-[ext_resource type="Script" uid="uid://44e1bu1wt2mt" path="res://scripts/ui/ui_manager.gd" id="10_efxa6"]
-[ext_resource type="Resource" uid="uid://bctplqd16fm2i" path="res://ui/dialogue/oko_intro.tres" id="11_dg77c"]
+[ext_resource type="Script" uid="uid://44e1bu1wt2mt" path="res://scripts/game_manager.gd" id="10_efxa6"]
 [ext_resource type="Script" uid="uid://ddqckkwoc2aih" path="res://ui/dialogue/dialogue_chunk.gd" id="11_ycdy4"]
+[ext_resource type="Script" uid="uid://c3tbhvvbmqkli" path="res://scripts/ui/dialogue_manager.gd" id="13_w48qg"]
 [ext_resource type="PackedScene" uid="uid://xjp1xakudn7f" path="res://game_objects/spade.tscn" id="14_w48qg"]
+[ext_resource type="Resource" uid="uid://bctplqd16fm2i" path="res://ui/dialogue/intro.tres" id="15_2cqfq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5vw27"]
 texture = ExtResource("1_272bh")
@@ -132,16 +133,6 @@ position = Vector2(550, 117)
 [node name="Dialogue" parent="UI" unique_id=1900946636 instance=ExtResource("9_4c57u")]
 visible = false
 
-[node name="UIManager" type="Node" parent="UI" unique_id=1262161790 node_paths=PackedStringArray("inventory_ui", "plant_details_ui", "dialogue_ui", "player", "spade", "oko") groups=["ui_manager"]]
-script = ExtResource("10_efxa6")
-inventory_ui = NodePath("../Inventory")
-plant_details_ui = NodePath("../PlantDetails")
-dialogue_ui = NodePath("../Dialogue")
-player = NodePath("../../Player")
-spade = NodePath("../../Spade")
-oko = NodePath("../../Oko")
-dialogues = Array[ExtResource("11_ycdy4")]([ExtResource("11_dg77c")])
-
 [node name="Oko" parent="." unique_id=1754330557 instance=ExtResource("9_kek77")]
 position = Vector2(239, 107)
 collision_layer = 4
@@ -149,3 +140,19 @@ collision_mask = 0
 
 [node name="Spade" parent="." unique_id=47733180 instance=ExtResource("14_w48qg")]
 position = Vector2(309, 98)
+
+[node name="DialogueManager" type="Node" parent="." unique_id=175226393 node_paths=PackedStringArray("dialogue_ui")]
+script = ExtResource("13_w48qg")
+dialogues = Dictionary[String, ExtResource("11_ycdy4")]({
+"introduction": ExtResource("15_2cqfq")
+})
+dialogue_ui = NodePath("../UI/Dialogue")
+
+[node name="GameManager" type="Node" parent="." unique_id=1262161790 node_paths=PackedStringArray("inventory_ui", "plant_details_ui", "player", "spade", "oko", "dialogue_manager") groups=["game_manager"]]
+script = ExtResource("10_efxa6")
+inventory_ui = NodePath("../UI/Inventory")
+plant_details_ui = NodePath("../UI/PlantDetails")
+player = NodePath("../Player")
+spade = NodePath("../Spade")
+oko = NodePath("../Oko")
+dialogue_manager = NodePath("../DialogueManager")

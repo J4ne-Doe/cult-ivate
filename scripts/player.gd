@@ -7,7 +7,7 @@ extends CharacterBody2D
 
 @export var display_name = "Jane"
 
-@onready var ui_manager = get_tree().get_first_node_in_group("ui_manager")
+@onready var game_manager = get_tree().get_first_node_in_group("game_manager")
 
 func _ready():
 	$AnimationPlayer.play("bobbing")
@@ -19,7 +19,7 @@ func _physics_process(delta):
 
 	manage_animation(input_direction)
 
-	if (ui_manager.state == ui_manager.states.DIALOGUE):return
+	if (game_manager.state == game_manager.states.DIALOGUE):return
 	move_and_slide()
 
 	#placeholder
@@ -34,7 +34,7 @@ func _physics_process(delta):
 			plant_manager.player_place_plant(cur_plant, global_position)
 
 func manage_animation(direction):
-	if (ui_manager.state == ui_manager.states.DIALOGUE):
+	if (game_manager.state == game_manager.states.DIALOGUE):
 		$Sprite.animation = "idle"
 		$Sprite.frame = 2
 		return

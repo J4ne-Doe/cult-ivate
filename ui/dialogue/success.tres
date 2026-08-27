@@ -1,0 +1,35 @@
+[gd_resource type="Resource" script_class="DialogueChunk" format=3 uid="uid://b4hgn15f54jci"]
+
+[ext_resource type="Script" uid="uid://v4ebad6be7n7" path="res://ui/dialogue/dialogue_string.gd" id="1_e6it8"]
+[ext_resource type="Script" uid="uid://ddqckkwoc2aih" path="res://ui/dialogue/dialogue_chunk.gd" id="2_8g8ly"]
+[ext_resource type="Texture2D" uid="uid://dvoncty44co0j" path="res://textures/characters/oko_full.png" id="2_r5s1d"]
+[ext_resource type="Texture2D" uid="uid://b7prf0mdh04sr" path="res://textures/characters/jane_full.png" id="3_8srk2"]
+
+[sub_resource type="Resource" id="Resource_r5s1d"]
+script = ExtResource("1_e6it8")
+line = "Wait... you actually did it...?!"
+character = "Oko"
+portrait = ExtResource("2_r5s1d")
+metadata/_custom_type_script = "uid://v4ebad6be7n7"
+
+[sub_resource type="Resource" id="Resource_8srk2"]
+script = ExtResource("1_e6it8")
+line = "Yeah, Im a bit of a agriculture PRO myself get #OWNED"
+character = "Jane"
+portrait = ExtResource("3_8srk2")
+metadata/_custom_type_script = "uid://v4ebad6be7n7"
+
+[sub_resource type="Resource" id="Resource_mn7s3"]
+script = ExtResource("1_e6it8")
+line = "FUUUUUUUCKKKKK
+Siiigh... :C
+
+[Too lazy to make title screen but you won yeah] [You can continue if u want]"
+character = "???"
+portrait = ExtResource("2_r5s1d")
+metadata/_custom_type_script = "uid://v4ebad6be7n7"
+
+[resource]
+script = ExtResource("2_8g8ly")
+dialogue_lines = Array[ExtResource("1_e6it8")]([SubResource("Resource_r5s1d"), SubResource("Resource_8srk2"), SubResource("Resource_mn7s3")])
+metadata/_custom_type_script = "uid://ddqckkwoc2aih"

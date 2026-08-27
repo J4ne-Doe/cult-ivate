@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="DialogueChunk" format=3 uid="uid://43vogvx3dlvo"]
+
+[ext_resource type="Script" uid="uid://v4ebad6be7n7" path="res://ui/dialogue/dialogue_string.gd" id="1_iwywc"]
+[ext_resource type="Texture2D" uid="uid://dvoncty44co0j" path="res://textures/characters/oko_full.png" id="2_hoyud"]
+[ext_resource type="Texture2D" uid="uid://b7prf0mdh04sr" path="res://textures/characters/jane_full.png" id="3_ruxm7"]
+[ext_resource type="Script" uid="uid://ddqckkwoc2aih" path="res://ui/dialogue/dialogue_chunk.gd" id="4_hyedi"]
+
+[sub_resource type="Resource" id="Resource_4mq11"]
+script = ExtResource("1_iwywc")
+line = "Oh well... thats too bad... :)"
+character = "Oko"
+portrait = ExtResource("2_hoyud")
+metadata/_custom_type_script = "uid://v4ebad6be7n7"
+
+[sub_resource type="Resource" id="Resource_d40ad"]
+script = ExtResource("1_iwywc")
+line = "NOOOOOOOOOOOOOO
+
+[Interact to restart im too lazy to make a death screen for now]"
+character = "Jane"
+portrait = ExtResource("3_ruxm7")
+metadata/_custom_type_script = "uid://v4ebad6be7n7"
+
+[resource]
+script = ExtResource("4_hyedi")
+dialogue_lines = Array[ExtResource("1_iwywc")]([SubResource("Resource_4mq11"), SubResource("Resource_d40ad")])
+metadata/_custom_type_script = "uid://ddqckkwoc2aih"

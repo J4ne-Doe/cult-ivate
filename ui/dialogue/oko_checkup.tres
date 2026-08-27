@@ -1,0 +1,31 @@
+[gd_resource type="Resource" script_class="DialogueChunk" format=3 uid="uid://m7lyxbxuddgb"]
+
+[ext_resource type="Script" uid="uid://v4ebad6be7n7" path="res://ui/dialogue/dialogue_string.gd" id="1_cdufn"]
+[ext_resource type="Texture2D" uid="uid://dvoncty44co0j" path="res://textures/characters/oko_full.png" id="2_7hot5"]
+[ext_resource type="Script" uid="uid://ddqckkwoc2aih" path="res://ui/dialogue/dialogue_chunk.gd" id="3_bif3o"]
+
+[sub_resource type="Resource" id="Resource_xliaw"]
+script = ExtResource("1_cdufn")
+line = "Im baaaaack.....!"
+character = "Oko"
+portrait = ExtResource("2_7hot5")
+metadata/_custom_type_script = "uid://v4ebad6be7n7"
+
+[sub_resource type="Resource" id="Resource_wg42u"]
+script = ExtResource("1_cdufn")
+line = "Do you have all your money ready...?"
+character = "Oko"
+portrait = ExtResource("2_7hot5")
+metadata/_custom_type_script = "uid://v4ebad6be7n7"
+
+[sub_resource type="Resource" id="Resource_6vgqk"]
+script = ExtResource("1_cdufn")
+line = "(I hope not...)"
+character = "Oko"
+portrait = ExtResource("2_7hot5")
+metadata/_custom_type_script = "uid://v4ebad6be7n7"
+
+[resource]
+script = ExtResource("3_bif3o")
+dialogue_lines = Array[ExtResource("1_cdufn")]([SubResource("Resource_xliaw"), SubResource("Resource_wg42u"), SubResource("Resource_6vgqk")])
+metadata/_custom_type_script = "uid://ddqckkwoc2aih"

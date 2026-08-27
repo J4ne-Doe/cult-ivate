@@ -105,7 +105,14 @@ metadata/_custom_type_script = "uid://v4ebad6be7n7"
 
 [sub_resource type="Resource" id="Resource_pkght"]
 script = ExtResource("1_l0d00")
-line = "Here are two strands of Millet... make it work... Ill check back on you in a while... and if you dont have 10 strands of millet ready..."
+line = "Here are two strands of Millet... make it work... Ill check back on you in a while... "
+character = "Oko"
+portrait = ExtResource("2_yr4ba")
+metadata/_custom_type_script = "uid://v4ebad6be7n7"
+
+[sub_resource type="Resource" id="Resource_olbmd"]
+script = ExtResource("1_l0d00")
+line = "If you havent earned $100.... hehehehe-"
 character = "Oko"
 portrait = ExtResource("2_yr4ba")
 metadata/_custom_type_script = "uid://v4ebad6be7n7"
@@ -119,5 +126,5 @@ metadata/_custom_type_script = "uid://v4ebad6be7n7"
 
 [resource]
 script = ExtResource("2_yjpla")
-dialogue_lines = Array[ExtResource("1_l0d00")]([SubResource("Resource_4mq11"), SubResource("Resource_l0d00"), SubResource("Resource_0tufi"), SubResource("Resource_yjpla"), SubResource("Resource_h6688"), SubResource("Resource_abimu"), SubResource("Resource_ucu5j"), SubResource("Resource_ajidp"), SubResource("Resource_dn24g"), SubResource("Resource_tx5j7"), SubResource("Resource_h7e54"), SubResource("Resource_n3nfy"), SubResource("Resource_wayyv"), SubResource("Resource_wlkwl"), SubResource("Resource_pkght"), SubResource("Resource_trcsx")])
+dialogue_lines = Array[ExtResource("1_l0d00")]([SubResource("Resource_4mq11"), SubResource("Resource_l0d00"), SubResource("Resource_0tufi"), SubResource("Resource_yjpla"), SubResource("Resource_h6688"), SubResource("Resource_abimu"), SubResource("Resource_ucu5j"), SubResource("Resource_ajidp"), SubResource("Resource_dn24g"), SubResource("Resource_tx5j7"), SubResource("Resource_h7e54"), SubResource("Resource_n3nfy"), SubResource("Resource_wayyv"), SubResource("Resource_wlkwl"), SubResource("Resource_pkght"), SubResource("Resource_olbmd"), SubResource("Resource_trcsx")])
 metadata/_custom_type_script = "uid://ddqckkwoc2aih"

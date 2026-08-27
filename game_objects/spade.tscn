@@ -14,7 +14,7 @@ radius = 7.0
 collision_layer = 4
 collision_mask = 0
 script = ExtResource("1_byg67")
-shovel_price = 10
+shovel_price = 5
 icon = SubResource("AtlasTexture_g36ft")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=197722250]
