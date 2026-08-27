@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://d05qfcrk1g0vd" path="res://ui/plant_details.tscn" id="8_5vw27"]
 [ext_resource type="PackedScene" uid="uid://dgy810ogfwtol" path="res://ui/dialogue/dialogue.tscn" id="9_4c57u"]
 [ext_resource type="PackedScene" uid="uid://ds7py364dnw36" path="res://game_objects/oko.tscn" id="9_kek77"]
+[ext_resource type="PackedScene" uid="uid://bbae3drnjwjqi" path="res://ui/game_timer.tscn" id="10_2cqfq"]
 [ext_resource type="Script" uid="uid://44e1bu1wt2mt" path="res://scripts/game_manager.gd" id="10_efxa6"]
 [ext_resource type="Script" uid="uid://ddqckkwoc2aih" path="res://ui/dialogue/dialogue_chunk.gd" id="11_ycdy4"]
 [ext_resource type="Script" uid="uid://c3tbhvvbmqkli" path="res://scripts/ui/dialogue_manager.gd" id="13_w48qg"]
@@ -112,26 +113,42 @@ y_sort_origin = 8
 script = ExtResource("5_7mycd")
 plant_tiles = NodePath("../PlantTiles")
 floor_tiles = NodePath("../EnvironmentTiles")
-inventory = NodePath("../UI/Inventory")
+inventory = NodePath("../UI/MarginContainer/Inventory")
 
 [node name="Player" parent="." unique_id=1313068919 node_paths=PackedStringArray("plant_manager", "inventory") groups=["player"] instance=ExtResource("1_ig7tw")]
 y_sort_enabled = true
 position = Vector2(407, 124)
 collision_mask = 6
 plant_manager = NodePath("../PlantManager")
-inventory = NodePath("../UI/Inventory")
+inventory = NodePath("../UI/MarginContainer/Inventory")
 
 [node name="ShopMachine" parent="." unique_id=758874352 instance=ExtResource("7_272bh")]
 position = Vector2(550, 117)
 
 [node name="UI" type="CanvasLayer" parent="." unique_id=1141515879]
 
-[node name="Inventory" parent="UI" unique_id=206974071 instance=ExtResource("6_7mycd")]
-
-[node name="PlantDetails" parent="UI" unique_id=852124098 instance=ExtResource("8_5vw27")]
-
 [node name="Dialogue" parent="UI" unique_id=1900946636 instance=ExtResource("9_4c57u")]
 visible = false
+
+[node name="MarginContainer" type="MarginContainer" parent="UI" unique_id=1919168623]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="GameTimer" parent="UI/MarginContainer" unique_id=1215336876 instance=ExtResource("10_2cqfq")]
+layout_mode = 2
+
+[node name="Inventory" parent="UI/MarginContainer" unique_id=206974071 instance=ExtResource("6_7mycd")]
+layout_mode = 2
+
+[node name="PlantDetails" parent="UI/MarginContainer" unique_id=852124098 instance=ExtResource("8_5vw27")]
+layout_mode = 2
 
 [node name="Oko" parent="." unique_id=1754330557 instance=ExtResource("9_kek77")]
 position = Vector2(239, 107)
@@ -139,7 +156,7 @@ collision_layer = 4
 collision_mask = 0
 
 [node name="Spade" parent="." unique_id=47733180 instance=ExtResource("14_w48qg")]
-position = Vector2(309, 98)
+position = Vector2(473, 95)
 
 [node name="DialogueManager" type="Node" parent="." unique_id=175226393 node_paths=PackedStringArray("dialogue_ui")]
 script = ExtResource("13_w48qg")
@@ -148,10 +165,11 @@ dialogues = Dictionary[String, ExtResource("11_ycdy4")]({
 })
 dialogue_ui = NodePath("../UI/Dialogue")
 
-[node name="GameManager" type="Node" parent="." unique_id=1262161790 node_paths=PackedStringArray("inventory_ui", "plant_details_ui", "player", "spade", "oko", "dialogue_manager") groups=["game_manager"]]
+[node name="GameManager" type="Node" parent="." unique_id=1262161790 node_paths=PackedStringArray("inventory_ui", "plant_details_ui", "game_timer_ui", "player", "spade", "oko", "dialogue_manager") groups=["game_manager"]]
 script = ExtResource("10_efxa6")
-inventory_ui = NodePath("../UI/Inventory")
-plant_details_ui = NodePath("../UI/PlantDetails")
+inventory_ui = NodePath("../UI/MarginContainer/Inventory")
+plant_details_ui = NodePath("../UI/MarginContainer/PlantDetails")
+game_timer_ui = NodePath("../UI/MarginContainer/GameTimer")
 player = NodePath("../Player")
 spade = NodePath("../Spade")
 oko = NodePath("../Oko")

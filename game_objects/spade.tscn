@@ -10,10 +10,14 @@ region = Rect2(0, 0, 32, 0)
 [sub_resource type="CircleShape2D" id="CircleShape2D_cbb8a"]
 radius = 7.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_yijgw"]
+radius = 28.071337
+
 [node name="Spade" type="StaticBody2D" unique_id=47733180]
 collision_layer = 4
 collision_mask = 0
 script = ExtResource("1_byg67")
+interact_distance = null
 shovel_price = 5
 icon = SubResource("AtlasTexture_g36ft")
 
@@ -24,3 +28,9 @@ hframes = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=492755004]
 shape = SubResource("CircleShape2D_cbb8a")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=55891466]
+collision_layer = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=243924958]
+shape = SubResource("CircleShape2D_yijgw")

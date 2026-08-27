@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://bbae3drnjwjqi"]
+
+[ext_resource type="Script" uid="uid://ds2wrqwflmvu3" path="res://scripts/ui/game_timer.gd" id="1_icbrh"]
+
+[node name="GameTimer" type="Control" unique_id=1215336876]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_icbrh")
+
+[node name="Timer" type="Timer" parent="." unique_id=374098551]
+one_shot = true
+
+[node name="Label" type="Label" parent="." unique_id=695702876]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 17.0
+grow_horizontal = 2
+text = "AAAAA"
+horizontal_alignment = 1
+vertical_alignment = 1

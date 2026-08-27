@@ -72,3 +72,6 @@ size_flags_vertical = 3
 text = "IM GOONING IT RAHHHHHHHHHHHHHHHHHHHHHHHHHHHHHHH"
 visible_characters = 0
 visible_ratio = 0.0
+
+[node name="Cooldown" type="Timer" parent="." unique_id=169311158]
+one_shot = true

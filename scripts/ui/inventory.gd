@@ -2,9 +2,7 @@ extends Control
 
 @export var inventory : Array[Panel]
 @export var selected_space_id : int = 0
-
 @onready var plant_manager = get_tree().get_first_node_in_group("plant_manager") 
-
 @export var shovel : Label
 
 func _process(delta):
